@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+    </style>
+
+</head>
+
+<body>
+<div id="canvasDiv"></div>
+<br>
+<div>
+    <button type="button" onclick="addImages()">Build Image Layout</button>
+</div>
+<br>
+
+</body>
+
+<script type="text/javascript">
+
+    //generates the canvas size
+    function canvas_X() {
+        return 800;
+    }
+    function canvas_Y() {
+        return 400;
+    }
+    //generates the canvas element on the html page
+    window.onload = function() {
+        let x = canvas_X(), y = canvas_Y();
+        document.getElementById('canvasDiv').innerHTML =
+            "<canvas id='gridCanvas' width='" + x + "' height='" + y + "' style='border: 1px solid'></canvas>";
+    };
+
+    // holds images and their attributes
+    let imageObjArray = [
+        {
+            top: true,
+            right: true,
+            bottom: true,
+            left: true,
+            image: "color/1.png"
+        },
+        {
+            top: true,
+            right: false,
+            bottom: true,
+            left: true,
+            image: "color/2.png"
+        },
+        {
+            top: false,
+            right: true,
+            bottom: true,
+            left: true,
+            image: "color/3.png"
+        },
+        {
+            top: true,
+            right: true,
+            bottom: false,
+            left: true,
+            image: "color/4.png"
+        },
+        {
+            top: true,
+            right: true,
+            bottom: true,
+            left: false,
+            image: "color/5.png"
+        },
+        {
+            top: true,
+            right: false,
+            bottom: true,
+            left: false,
+            image: "color/6.png"
+        },
+        {
+            top: false,
+            right: true,
+            bottom: false,
+            left: true,
+            image: "color/7.png"
+        },
+        {
+            top: false,
+            right: true,
+            bottom: false,
+            left: false,
+            image: "color/8.png"
+        },
+        {
+            top: true,
+            right: false,
+            bottom: false,
+            left: false,
+            image: "color/9.png"
+        },
+        {
+            top: false,
+            right: false,
+            bottom: false,
+            left: true,
+            image: "color/10.png"
+        },
+        {
+            top: false,
+            right: false,
+            bottom: true,
+            left: false,
+            image: "color/11.png"
+        },
+        {
+            top: false,
+            right: false,
+            bottom: false,
+            left: false,
+            image: "color/12.png"
+        }
+    ];
+
+    function imageArray(x, y) {
+        if (x === 0 && y === 0) {
+            var topLeftFalses = imageObjArray.filter(item => item.left === false && item.top === false);
+            let pick = Math.floor(Math.random() * (topLeftFalses.length -1)) + 1;
+            return topLeftFalses[pick];
+        }
+        if (x === (canvas_X() - 25) && y === 0) {
+            var topRightFalses = imageObjArray.filter(item => item.right === false && item.top === false);
+            let pick = Math.floor(Math.random() * (topRightFalses.length -1)) + 1;
+            return topRightFalses[pick];
+        }
+        if (x === 0) {
+            var leftFalses = imageObjArray.filter(item => item.left === false);
+            let pick = Math.floor(Math.random() * (leftFalses.length -1)) + 1;
+            return leftFalses[pick];
+        }
+        if (y === 0) {
+            var topFalses = imageObjArray.filter(item => item.top === false);
+            let pick = Math.floor(Math.random() * (topFalses.length -1)) + 1;
+            return topFalses[pick];
+        }
+        let pick = Math.floor(Math.random() * (imageObjArray.length -1)) + 1;
+        return imageObjArray[pick];
+    }
+
+    function addImages() {
+        let canvas = document.getElementById('gridCanvas'),
+            context = canvas.getContext('2d');
+        let x = canvas_X();
+        let y = canvas_Y();
+        for (let i = 0; i < x; i += 25) {
+            for (let j = 0; j < y; j += 25) {
+                var image = new Image();
+                var imagePassed = imageArray(i, j);
+                image.src = imagePassed.image;
+                context.drawImage(image, i, j, 25,25);
+            }
+        }
+    }
+
+    //builds the grid and populates the images for display on the canvas
+    //this takes the canvas width and height and divides it by 25(image size)
+    function buildGridArray() {
+        let imageSize = 25;
+        let rows      = canvas_Y() / imageSize;
+        let columns   = canvas_X() / imageSize;
+
+        var gridArray = [rows][columns];
+    }
+    buildGridArray();
+
+</script>
+</html>
+
