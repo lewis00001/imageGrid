@@ -1,0 +1,21 @@
+#canvasDiv {
+    margin: 40px 40px 0px 40px;
+}
+#gridCanvas {
+    border: 2px solid black;
+}
+
+button {
+    margin-left: 40px;
+    font-weight: bold;
+    padding: 8px;
+    font-family: monospace;
+}
+
+body {
+    background-color: rgb(236, 224, 224);
+}
+
+#canvasBreakdown {
+    border: 1px dotted black;
+}
