@@ -1,26 +1,31 @@
-   // sets block size
-   function blockSize() {
-    return 30;
-}
-// canvas width
-function canvas_X() {
-    return blockSize() * 3;
-}
-// canvas height
-function canvas_Y() {
-    return blockSize() * 3;
+// sets block size
+blockSize = () => {
+    return 20;
 }
 
+// sets width & used for finding position for block selection
+const NUM_Y = 30;
+const NUM_X = 75;
+// canvas width
+canvas_X = () => {
+    return blockSize() * NUM_X;
+}
+// canvas height
+canvas_Y = () => {
+    return blockSize() * NUM_Y;
+}
+
+let x = canvas_X(),
+    y = canvas_Y();
+
 //generates the canvas element on the html page
-window.onload = function() {
-    let x = canvas_X(), y = canvas_Y();
+window.onload = () => {
     document.getElementById('canvasDiv').innerHTML =
         "<canvas id='gridCanvas' width='" + x + "' height='" + y + "'></canvas>";
 };
 
 // holds images and their attributes
-let imageObjArray = [
-    {
+let imageObjArray = [{
         top: true,
         right: true,
         bottom: true,
@@ -135,95 +140,68 @@ let imageObjArray = [
 ];
 // created and cleared by addImages()
 let displayedObjArray = [];
+let imageObjPassed = [];
 
-
-function imageArray(x, y) {
-    // *** no touch corners ***********************************************
-    // top right corner
-    if (x === (canvas_X() - blockSize()) && y === 0) {
-        var topRightCornerFalse = 
-            imageObjArray.filter(item => item.right === false && item.top === false);
-        let pick = Math.floor(Math.random() * (topRightCornerFalse.length -1)) + 1;
-        return topRightCornerFalse[pick];
+// 
+imageArray = (x, y) => {
+    var _pick;
+    // sides all false - top row, left side, right side, bottom row
+    if (y === 0 || x === 0 ||
+        x === canvas_X() - blockSize() ||
+        y === canvas_Y() - blockSize()) {
+        return imageObjArray[11];
+    // checks surrounding images to verify fit
+    } else {
+        pick = () => {
+            let atBottom = false;
+            // checks for bottom position
+            if (((y / blockSize()) - 1) === (NUM_Y - 3)) {
+                atBottom = true;
+            }
+            let farRight = false;
+            // checks for top far right position
+            if (x / blockSize() === (NUM_X - 2)) {
+                farRight = true;
+            }
+            // selects image to evaluate fit
+            let p_pick = Math.floor(Math.random() * (imageObjArray.length - 1)) + 1;
+            // verifies that p_pick matches surrounding images
+            if (displayedObjArray[displayedObjArray.length - 1].bottom !== imageObjArray[p_pick].top ||
+                displayedObjArray[displayedObjArray.length - NUM_Y].right !== imageObjArray[p_pick].left ||
+                (atBottom === true && imageObjArray[p_pick].bottom !== false) ||
+                (farRight === true && imageObjArray[p_pick].right !== false) ) {
+                pick(); // if selected image does not fit, rerun function
+            } else {
+                _pick = p_pick;
+            }
+        }
+        pick();
     }
-    // bottom right corner
-    if (x === (canvas_X() - blockSize()) && y === (canvas_Y() - blockSize())) {
-        var bottomRightCornerFalse = 
-            imageObjArray.filter(item => item.right === false && item.bottom === false);
-        let pick = Math.floor(Math.random() * (bottomRightCornerFalse.length -1)) + 1;
-        return bottomRightCornerFalse[pick];
-    }
-    // bottom left corner
-    if (x === 0 && y === (canvas_Y() - blockSize())) {
-        var bottomLeftCornerFalse = 
-            imageObjArray.filter(item => item.left === false && item.bottom === false);
-        let pick = Math.floor(Math.random() * (bottomLeftCornerFalse.length -1)) + 1;
-        return bottomLeftCornerFalse[pick];
-    }
-    // top left corner
-    if (x === 0 && y === 0) {
-        var topRightFalses = 
-            imageObjArray.filter(item => item.left === false && item.top === false);
-        let pick = Math.floor(Math.random() * (topRightFalses.length -1)) + 1;
-        return topRightFalses[pick];
-    }
-    // ********************************************************************
-
-    // *** no touch sides *************************************************
-    // top row
-    if (y === 0) {
-        var topFalse = imageObjArray.filter(item => item.top === false);
-        let pick = Math.floor(Math.random() * (topFalse.length -1)) + 1;
-        return topFalse[pick];
-    }
-    // right side
-    if (x === canvas_X() - blockSize()) {
-        rightFalse = imageObjArray.filter(item => item.right === false);
-        let pick = Math.floor(Math.random() * (rightFalse.length -1)) + 1;
-        return rightFalse[pick];
-    }
-    // bottom row
-    if (y === canvas_Y() - blockSize()) {
-        bottomFalse = imageObjArray.filter(item => item.bottom === false);
-        let pick = Math.floor(Math.random() * (bottomFalse.length -1)) + 1;
-        return bottomFalse[pick];
-    }
-    // left side
-    if (x === 0) {
-        leftFalse = imageObjArray.filter(item => item.left === false);
-        let pick = Math.floor(Math.random() * (leftFalse.length -1)) + 1;
-        return leftFalse[pick];
-    }
-    // ********************************************************************
-
-    let pick = Math.floor(Math.random() * (imageObjArray.length -1)) + 1;
-    return imageObjArray[pick];
+    return imageObjArray[_pick];
 }
 
-function addImages() {
+addImages = () => {
+    console.clear(); // remove this later
     displayedObjArray = [];
     let canvas = document.getElementById('gridCanvas'),
         context = canvas.getContext('2d');
-    let x = canvas_X();
-    let y = canvas_Y();
     for (let i = 0; i < x; i += blockSize()) {
         for (let j = 0; j < y; j += blockSize()) {
-            var image = new Image();
-            var imageObjPassed = imageArray(i, j);
+            let image = new Image();
+            imageObjPassed = imageArray(i, j);
             image.src = imageObjPassed.image;
             // fills array with image object used on the canvas
             displayedObjArray.push(imageObjPassed);
-
-            context.drawImage(image, i, j, blockSize(),blockSize());
+            context.drawImage(image, i, j, blockSize(), blockSize());
         }
     }
 }
 
 // builds the grid and populates the images for display on the canvas
 // this takes the canvas width and height and divides it by blockSize
-function buildGridArray() {
-    let rows      = canvas_Y() / blockSize();
-    let columns   = canvas_X() / blockSize();
+buildGridArray = () => {
+    let rows = canvas_Y() / blockSize();
+    let columns = canvas_X() / blockSize();
     var gridArray = [rows][columns];
 }
 buildGridArray();
