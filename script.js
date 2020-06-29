@@ -136,6 +136,27 @@ let imageObjArray = [{
         bottom: true,
         left: false,
         image: "blocks/16.png"
+    },
+    {        
+        top: true,
+        right: true,
+        bottom: true,
+        left: true,
+        image: "blocks/17.png"
+    },
+    {        
+        top: true,
+        right: true,
+        bottom: true,
+        left: true,
+        image: "blocks/18.png"
+    },
+    {        
+        top: true,
+        right: true,
+        bottom: true,
+        left: true,
+        image: "blocks/20.png"
     }
 ];
 // created and cleared by addImages()
