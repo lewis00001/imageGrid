@@ -26,6 +26,104 @@ window.onload = () => {
 
 // holds images and their attributes
 let imageObjArray = [{
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
         top: true,
         right: true,
         bottom: true,
@@ -137,21 +235,21 @@ let imageObjArray = [{
         left: false,
         image: "blocks/16.png"
     },
-    {        
+    {
         top: true,
         right: true,
         bottom: true,
         left: true,
         image: "blocks/17.png"
     },
-    {        
+    {
         top: true,
         right: true,
         bottom: true,
         left: true,
         image: "blocks/18.png"
     },
-    {        
+    {
         top: true,
         right: true,
         bottom: true,
@@ -170,8 +268,8 @@ imageArray = (x, y) => {
     if (y === 0 || x === 0 ||
         x === canvas_X() - blockSize() ||
         y === canvas_Y() - blockSize()) {
-        return imageObjArray[11];
-    // checks surrounding images to verify fit
+        return imageObjArray[0];
+        // checks surrounding images to verify fit
     } else {
         pick = () => {
             let atBottom = false;
@@ -190,7 +288,7 @@ imageArray = (x, y) => {
             if (displayedObjArray[displayedObjArray.length - 1].bottom !== imageObjArray[p_pick].top ||
                 displayedObjArray[displayedObjArray.length - NUM_Y].right !== imageObjArray[p_pick].left ||
                 (atBottom === true && imageObjArray[p_pick].bottom !== false) ||
-                (farRight === true && imageObjArray[p_pick].right !== false) ) {
+                (farRight === true && imageObjArray[p_pick].right !== false)) {
                 pick(); // if selected image does not fit, rerun function
             } else {
                 _pick = p_pick;
