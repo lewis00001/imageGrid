@@ -247,6 +247,13 @@ let imageObjArray = [{
         right: true,
         bottom: true,
         left: true,
+        image: "blocks/17.png"
+    },
+    {
+        top: true,
+        right: true,
+        bottom: true,
+        left: true,
         image: "blocks/18.png"
     },
     {
