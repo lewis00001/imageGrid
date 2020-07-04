@@ -1,27 +1,34 @@
 // sets block size
+let bSize = 30;
 blockSize = () => {
-    return 20;
+    return bSize;
 }
 
 // sets width & used for finding position for block selection
-const NUM_Y = 30;
-const NUM_X = 75;
+let numY = 20;
+let numX = 40;
 // canvas width
 canvas_X = () => {
-    return blockSize() * NUM_X;
+    return blockSize() * numX;
 }
 // canvas height
 canvas_Y = () => {
-    return blockSize() * NUM_Y;
+    return blockSize() * numY;
 }
 
-let x = canvas_X(),
+let x = canvas_X(), y = canvas_Y();
+
+setCanvas = () => {
+    x = canvas_X();
     y = canvas_Y();
+    document.getElementById('canvasDiv').innerHTML =
+    "<canvas id='gridCanvas' width='" + x + "' height='" + y + "'></canvas>";
+}
 
 //generates the canvas element on the html page
 window.onload = () => {
-    document.getElementById('canvasDiv').innerHTML =
-        "<canvas id='gridCanvas' width='" + x + "' height='" + y + "'></canvas>";
+    setCanvas();
+    addImages();
 };
 
 // holds images and their attributes
@@ -282,7 +289,25 @@ let imageObjArray = [{
 let displayedObjArray = [];
 let imageObjPassed = [];
 
-// 
+// gets radio value for size option
+getRadioValue = () => {
+    let radios = document.getElementsByName('mode');
+    if(radios[0].checked) {
+        bSize = 30;
+        numY = 20;
+        numX = 40;
+    } else if (radios[1].checked) {
+        bSize = 20;
+        numY = 30;
+        numX = 60;
+    } else if (radios[2].checked) {
+        bSize = 10;
+        numY = 60;
+        numX = 120;
+    } 
+}
+
+// selects an image based on position and surrounding images
 imageArray = (x, y) => {
     var _pick;
     // sides all false - top row, left side, right side, bottom row
@@ -295,22 +320,22 @@ imageArray = (x, y) => {
         pick = () => {
             let atBottom = false;
             // checks for bottom position
-            if (((y / blockSize()) - 1) === (NUM_Y - 3)) {
+            if (((y / blockSize()) - 1) === (numY - 3)) {
                 atBottom = true;
             }
             let farRight = false;
             // checks for top far right position
-            if (x / blockSize() === (NUM_X - 2)) {
+            if (x / blockSize() === (numX - 2)) {
                 farRight = true;
             }
             // selects image to evaluate fit
             let p_pick = Math.floor(Math.random() * (imageObjArray.length - 1)) + 1;
             // verifies that p_pick matches surrounding images
             if (displayedObjArray[displayedObjArray.length - 1].bottom !== imageObjArray[p_pick].top ||
-                displayedObjArray[displayedObjArray.length - NUM_Y].right !== imageObjArray[p_pick].left ||
+                displayedObjArray[displayedObjArray.length - numY].right !== imageObjArray[p_pick].left ||
                 (atBottom === true && imageObjArray[p_pick].bottom !== false) ||
                 (farRight === true && imageObjArray[p_pick].right !== false)) {
-                pick(); // if selected image does not fit, rerun function
+                pick(); // if selected image does not fit, return function
             } else {
                 _pick = p_pick;
             }
@@ -321,7 +346,7 @@ imageArray = (x, y) => {
 }
 
 addImages = () => {
-    console.clear(); // remove this later
+    getRadioValue();
     displayedObjArray = [];
     let canvas = document.getElementById('gridCanvas'),
         context = canvas.getContext('2d');
@@ -336,12 +361,3 @@ addImages = () => {
         }
     }
 }
-
-// builds the grid and populates the images for display on the canvas
-// this takes the canvas width and height and divides it by blockSize
-buildGridArray = () => {
-    let rows = canvas_Y() / blockSize();
-    let columns = canvas_X() / blockSize();
-    var gridArray = [rows][columns];
-}
-buildGridArray();
