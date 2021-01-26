@@ -131,6 +131,97 @@ let imageObjArray = [{
         image: "blocks/0.png"
     },
     {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks/0.png"
+    },
+    {
         top: true,
         right: true,
         bottom: true,
