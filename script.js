@@ -37,343 +37,343 @@ let imageObjArray = [{
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/0.png"
+        image: "blocks2/0.png"
     },
     {
         top: true,
         right: true,
         bottom: true,
         left: true,
-        image: "blocks/1.png"
+        image: "blocks2/1.png"
     },
     {
         top: true,
         right: false,
         bottom: true,
         left: true,
-        image: "blocks/2.png"
+        image: "blocks2/2.png"
     },
     {
         top: false,
         right: true,
         bottom: true,
         left: true,
-        image: "blocks/3.png"
+        image: "blocks2/3.png"
     },
     {
         top: true,
         right: true,
         bottom: false,
         left: true,
-        image: "blocks/4.png"
+        image: "blocks2/4.png"
     },
     {
         top: true,
         right: true,
         bottom: true,
         left: false,
-        image: "blocks/5.png"
+        image: "blocks2/5.png"
     },
     {
         top: true,
         right: false,
         bottom: true,
         left: false,
-        image: "blocks/6.png"
+        image: "blocks2/6.png"
     },
     {
         top: false,
         right: true,
         bottom: false,
         left: true,
-        image: "blocks/7.png"
+        image: "blocks2/7.png"
     },
     {
         top: false,
         right: true,
         bottom: false,
         left: false,
-        image: "blocks/8.png"
+        image: "blocks2/8.png"
     },
     {
         top: true,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/9.png"
+        image: "blocks2/9.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: true,
-        image: "blocks/10.png"
+        image: "blocks2/10.png"
     },
     {
         top: false,
         right: false,
         bottom: true,
         left: false,
-        image: "blocks/11.png"
-    },
-    {
-        top: false,
-        right: false,
-        bottom: false,
-        left: false,
-        image: "blocks/12.png"
-    },
-    {
-        top: false,
-        right: false,
-        bottom: true,
-        left: true,
-        image: "blocks/13.png"
-    },
-    {
-        top: true,
-        right: false,
-        bottom: false,
-        left: true,
-        image: "blocks/14.png"
-    },
-    {
-        top: true,
-        right: true,
-        bottom: false,
-        left: false,
-        image: "blocks/15.png"
-    },
-    {
-        top: false,
-        right: true,
-        bottom: true,
-        left: false,
-        image: "blocks/16.png"
-    },
-    {
-        top: true,
-        right: true,
-        bottom: true,
-        left: true,
-        image: "blocks/17.png"
-    },
-    {
-        top: true,
-        right: true,
-        bottom: true,
-        left: true,
-        image: "blocks/17.png"
-    },
-    {
-        top: true,
-        right: true,
-        bottom: true,
-        left: true,
-        image: "blocks/18.png"
-    },
-    {
-        top: true,
-        right: true,
-        bottom: true,
-        left: true,
-        image: "blocks/19.png"
-    },
-    {
-        top: true,
-        right: true,
-        bottom: true,
-        left: true,
-        image: "blocks/20.png"
+        image: "blocks2/11.png"
     },
     {
         top: false,
         right: false,
         bottom: false,
         left: false,
-        image: "blocks/21.png"
+        image: "blocks2/12.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: true,
+        left: true,
+        image: "blocks2/13.png"
+    },
+    {
+        top: true,
+        right: false,
+        bottom: false,
+        left: true,
+        image: "blocks2/14.png"
+    },
+    {
+        top: true,
+        right: true,
+        bottom: false,
+        left: false,
+        image: "blocks2/15.png"
+    },
+    {
+        top: false,
+        right: true,
+        bottom: true,
+        left: false,
+        image: "blocks2/16.png"
+    },
+    {
+        top: true,
+        right: true,
+        bottom: true,
+        left: true,
+        image: "blocks2/17.png"
+    },
+    {
+        top: true,
+        right: true,
+        bottom: true,
+        left: true,
+        image: "blocks2/17.png"
+    },
+    {
+        top: true,
+        right: true,
+        bottom: true,
+        left: true,
+        image: "blocks2/18.png"
+    },
+    {
+        top: true,
+        right: true,
+        bottom: true,
+        left: true,
+        image: "blocks2/19.png"
+    },
+    {
+        top: true,
+        right: true,
+        bottom: true,
+        left: true,
+        image: "blocks2/20.png"
+    },
+    {
+        top: false,
+        right: false,
+        bottom: false,
+        left: false,
+        image: "blocks2/21.png"
     }
 ];
 // created and cleared by addImages()
